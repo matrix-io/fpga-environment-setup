@@ -137,8 +137,6 @@ Once downloaded, extract the contents of the file.
 
 Then, open VirtualBox and follow the directions below.
 
-
-
 ### Modify, Compile & Upload Verilog Files
 
 #### MATRIX Creator
