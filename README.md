@@ -113,6 +113,32 @@ Congratulations, you have set up your Xilinx FPGA compiler on Windows!
 
 [Scroll down](#modify-compile-&-upload-verilog-files) to learn how to mofidy the MATRIX device Verilog files, compile them and flash them to your MATRIX device FPGA.
 
+### For Mac
+
+This is not officially supported by Xilinx but the Windows method can be slightly modified to work with Mac.
+
+First download and install the OS X version of [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
+
+Click [here](https://www.xilinx.com/registration/sign-in.html?oamProtectedResource=wh%3Dwww.xilinx.com%20wu%3D%2Fmember%2Fforms%2Fdownload%2Fxef.html%3Ffilename%3DXilinx_ISE_S6_Win10_14.7_ISE_VMs_0206_1.zip%20wo%3D1%20rh%3Dhttps%3A%2F%2Fwww.xilinx.com%20ru%3D%252Fmember%252Fforms%252Fdownload%252Fxef.html%20rq%3Dfilename%253DXilinx_ISE_S6_Win10_14.7_ISE_VMs_0206_1.zip) to go to the Xilinx website and download the full ISE WebPack installer for Windows (yes Windows, we will mod slightly to make it work with Mac).
+
+The above link will prompt you to either log in to your Xilinx account or you will have to create one.
+
+![](/images/sign_in_sign_up.png)
+
+Once you log in, Xilinx will take you to a page where you will have to fill out more information.
+
+If you are a student/professor, you can enter your institution name for the "Company Name" field or just put "ATTN: your name" in the company field.
+
+After filling out all the required fields, click Next.
+
+You will then be prompted to open or save the Xilinx ISE tar file. Make sure to save the file to your desired location on your computer.
+
+Once downloaded, extract the contents of the file.
+
+Then, open VirtualBox
+
+
+
 ### Modify, Compile & Upload Verilog Files
 
 #### MATRIX Creator
@@ -149,7 +175,7 @@ If git is not installed on your computer, type the following commands to install
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install git
+sudo apt-get install git 
 ```
 You can then navigate to matrix-voice-fpga > voice-core and edit the Verilog files as desired.
 
