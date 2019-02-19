@@ -135,7 +135,61 @@ You will then be prompted to open or save the Xilinx ISE tar file. Make sure to 
 
 Once downloaded, extract the contents of the file.
 
-Then, open VirtualBox and follow the directions below.
+Then, open VirtualBox. Go to Tools, and click import.
+
+![](/images/import_button.png)
+
+This should take you to a window where you have to select a directory. Navigate to the extracted Xilinx ISE folder, then into the folder ova. Select the ISE_S6_VM.ova file. Then click 'Continue'.
+
+![](/images/select_VM.png)
+
+The following window will look like the one shown below. You shouldn't have to change any of the pre-filled fields. Click 'Import'
+
+![](/images/settings_for_import.png)
+
+Then the Xilinx ISE VM will show up in VirtualBox. Click 'Start'.
+
+![](/images/ISE_VM.png)
+
+You will initially get a network error. Click on 'Change Network Settings'.
+
+![](/images/Network_error.png)
+
+In the network settings, change the 'Attached to:' field to 'Not attached'. Then click 'OK'.
+
+![](/images/Network_not_attached.png)
+
+VirtualBox will now boot into the Xilinx ISE VM. Create a shared folder between your host Mac machine and the Linux Xilinx ISE VM so that you can edit files on your Mac and compile them in the VM.
+
+The process is shown in the GIF below.
+
+1. Go to Devices > Shared Folders > Shared Folder Settings.
+2. Select the folder of your choice on your Mac. 
+3. Check the boxes 'Auto-mount' and 'Make Permanent'. Click 'OK'. 
+4. Reboot the VM and your shared folder will now be on the Desktop.
+5. Tip for future: Make sure to refresh the folder every time you change files/folders in the shared folder from your Mac before compiling using ISE in the VM.
+
+![](/images/create_shared_folder.gif)
+
+Next, update your ISE license.
+
+To install the license file, go back to the Xilinx website using [this](https://www.xilinx.com/member/forms/license-form.html) link. 
+
+Once again, you will be prompted to log in. Once you do, it will take you to the page to fill out additional information which should be pre-filled. (**Verify this works on Mozilla**) Click Next.
+
+Select *ISE WebPACK* check box (you will see it says "No Charge") and click on "Generate Node-locked License".
+
+Once the license is generated, you will automatically be routed to the "Manage Licenses" tab. Click on the download button on the bottom left corner of the window. Make sure to download the license or move it into the filepath of your choosing before continuing on.
+
+![](/images/download_license.png)
+
+Go to your ISE Project Navigator, go to Help > Manage License > Load License and select the appropriate license file.
+
+********INSERT VIDEO********
+
+Congratulations, you have set up your Xilinx FPGA compiler on Linux!
+
+[Scroll down](#modify-compile-&-upload-verilog-files) to learn how to mofidy the MATRIX device Verilog files, compile them and flash them to your MATRIX device FPGA.
 
 ### Modify, Compile & Upload Verilog Files
 
