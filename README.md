@@ -103,11 +103,11 @@ I would recommend creating the desktop shortcut. It starts the VM and runs the I
 
 The Xilinx ISE VM shares files with your host computer and prompts you to specify the shared file. This is how you will edit files on your host machine and compile them using the Xilinx ISE VM.
 
-![](/images/Xilinx_Windows_Install_1.png)
+![](/images/Xilinx_Windows_Install_1.PNG)
 
 The contents of your shared folder will show up in the Xilinx ISE VM as a drive called ISE_Projects as shown below.
 
-![](/images/Xilinx_Windows_After_Install.png)
+![](/images/Xilinx_Windows_After_Install.PNG)
 
 Congratulations, you have set up your Xilinx FPGA compiler on Windows!
 
