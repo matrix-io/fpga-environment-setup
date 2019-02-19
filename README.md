@@ -135,7 +135,7 @@ You will then be prompted to open or save the Xilinx ISE tar file. Make sure to 
 
 Once downloaded, extract the contents of the file.
 
-Then, open VirtualBox
+Then, open VirtualBox and follow the directions below.
 
 
 
