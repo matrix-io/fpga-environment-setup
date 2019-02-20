@@ -209,7 +209,7 @@ You can then navigate to matrix-creator-fpga > creator-core and edit the Verilog
 
 ##### Compile and Flash MATRIX Creator FPGA code
 
-To compile the modified FPGA code, open your terminal, navigate to the matrix-creator-fpga > creator-core directory and run the command
+To compile the modified FPGA code, open your terminal, navigate to the matrix-creator-fpga > creator-core directory and run the command below. Be sure to have the Xilinx ISE running in the background.
 ```bash
 make
 ```
@@ -237,7 +237,7 @@ You can then navigate to matrix-voice-fpga > voice-core and edit the Verilog fil
 
 ##### Compile and Flash MATRIX Voice FPGA code
 
-To compile the modified FPGA code, open your terminal, navigate to the matrix-voice-fpga > voice-core directory and run the command
+To compile the modified FPGA code, open your terminal, navigate to the matrix-voice-fpga > voice-core directory and run the command below. Be sure to have the Xilinx ISE running in the background.
 ```bash
 make
 ```
