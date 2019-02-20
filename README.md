@@ -1,5 +1,7 @@
 # FPGA Programming Environment Setup
-How to set up the Xilinx compiler for FPGA code to flash the SPARTAN-6 FPGAs on MATRIX devices.
+How to set up the Xilinx compiler for FPGA code, and get started with FPGA programming on the SPARTAN-6 FPGAs on MATRIX devices.
+
+> Please note that the open-source FPGA code for MATRIX devices have the mic digital signal processing (DSP) algorithms omitted. So, reflashing the FPGA with modified code will remove mic functionality. Directions on how to restore the original FPGA configurations with mics is available on our [documentaion](https://matrix-io.github.io/matrix-documentation/).
 
 ### For Linux
 
