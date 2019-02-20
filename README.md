@@ -243,7 +243,7 @@ This should create a system.bit file.
 
 To flash the system.bit file onto your FPGA, follow the instructions in the documentation [here](https://matrix-io.github.io/matrix-documentation/matrix-voice/resources/fpga/).
 
-Scroll down for [General Comments](#general-comments).
+See [General Comments](#general-comments) below.
 
 #### General Comments
 You can use a text editor of your choice to edit the Verilog files. I prefer to use [Visual Studio Code](https://code.visualstudio.com/) in which you can install extensions to color code your files.
@@ -277,7 +277,7 @@ Now to see the MATRIX Voice to Raspberry Pi GPIO connections.
 ![](/images/MATRIX_Voice_RPi_connect_pic.png)
 ![](/images/MATRIX_Voice_to_RPi.png)
 
-Since we want to expose a Raspberry Pi GPIO, we will have to pick an RPi pin that is connected to the FPGA. In this example, I pick GPIO 16 which is connected to FPGA pin P8.
+Since we want to expose a Raspberry Pi GPIO, we will have to pick an RPi pin that is connected to the FPGA. In this example, I pick GPIO16 which is connected to FPGA pin P8.
 
 Now to the Verilog files!
 
