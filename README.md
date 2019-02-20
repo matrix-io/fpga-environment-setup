@@ -3,7 +3,7 @@ How to set up the Xilinx compiler for FPGA code, and get started with FPGA progr
 
 > Be very careful and deliberate about your FPGA code modifications. Experimenting with FPGA code could disable your MATRIX device. 
 
-> Please note that the open-source FPGA code for MATRIX devices have the mic digital signal processing (DSP) algorithms omitted. So, reflashing the FPGA with modified code will remove mic functionality. Directions on how to restore the original FPGA configurations with mics is available on our [documentaion](https://matrix-io.github.io/matrix-documentation/).
+> Please note that the open-source FPGA code for MATRIX devices have the mic digital signal processing (DSP) algorithms omitted. So, reflashing the FPGA with modified code will remove mic functionality. Directions on how to restore the original FPGA configurations with mics is available on our [documentation](https://matrix-io.github.io/matrix-documentation/).
 
 ## Table of Contents
 1. Install Xilinx ISE for [Linux](#for-linux)
