@@ -14,7 +14,7 @@ How to set up the Xilinx compiler for FPGA code, and get started with FPGA progr
 6. [General Comments with Tips and Tricks](#general-comments)
 7. [Simple Example with MATRIX Voice](#simple-code-modification-example-for-matrix-voice)
 
-### For Linux
+## For Linux
 
 Click [here](https://www.xilinx.com/registration/sign-in.html?oamProtectedResource=wh%3Dwww.xilinx.com%20wu%3D%2Fmember%2Fforms%2Fdownload%2Fxef.html%3Ffilename%3DXilinx_ISE_DS_Lin_14.7_1015_1.tar%20wo%3D1%20rh%3Dhttps%3A%2F%2Fwww.xilinx.com%20ru%3D%252Fmember%252Fforms%252Fdownload%252Fxef.html%20rq%3Dfilename%253DXilinx_ISE_DS_Lin_14.7_1015_1.tar) to go to the Xilinx website and download the full ISE WebPack installer for Linux.
 
@@ -82,7 +82,7 @@ Congratulations, you have set up your Xilinx FPGA compiler on Linux!
 
 [Scroll down](#modify-compile-&-upload-verilog-files) to learn how to mofidy the MATRIX device Verilog files, compile them and flash them to your MATRIX device FPGA.
 
-### For Windows
+## For Windows
 
 Click [here](https://www.xilinx.com/registration/sign-in.html?oamProtectedResource=wh%3Dwww.xilinx.com%20wu%3D%2Fmember%2Fforms%2Fdownload%2Fxef.html%3Ffilename%3DXilinx_ISE_S6_Win10_14.7_ISE_VMs_0206_1.zip%20wo%3D1%20rh%3Dhttps%3A%2F%2Fwww.xilinx.com%20ru%3D%252Fmember%252Fforms%252Fdownload%252Fxef.html%20rq%3Dfilename%253DXilinx_ISE_S6_Win10_14.7_ISE_VMs_0206_1.zip) to go to the Xilinx website and download the full ISE WebPack installer for Windows.
 
@@ -122,7 +122,7 @@ Congratulations, you have set up your Xilinx FPGA compiler on Windows!
 
 [Scroll down](#modify-compile-&-upload-verilog-files) to learn how to mofidy the MATRIX device Verilog files, compile them and flash them to your MATRIX device FPGA.
 
-### For Mac
+## For Mac
 
 This is not officially supported by Xilinx but the Windows method can be slightly modified to work with Mac.
 
@@ -198,11 +198,11 @@ Congratulations, you have set up your Xilinx FPGA compiler on Linux!
 
 [Scroll down](#modify-compile-&-upload-verilog-files) to learn how to mofidy the MATRIX device Verilog files, compile them and flash them to your MATRIX device FPGA.
 
-### Modify, Compile & Upload Verilog Files
+## Modify, Compile & Upload Verilog Files
 
-#### MATRIX Creator
+### MATRIX Creator
 
-##### Clone MATRIX Creator FPGA code repo
+#### Clone MATRIX Creator FPGA code repo
 
 To modify the MATRIX Creator FPGA code, type the following commands in your computer's terminal (For Windows use Windows Power Shell, Git Bash or Putty, and make sure to clone the repo into the shared file path with the Xilinx ISE VM).
 ```bash
@@ -216,7 +216,7 @@ sudo apt-get install git
 ```
 You can then navigate to matrix-creator-fpga > creator-core and edit the Verilog files as desired. A simple example with MATRIX Voice is shown [below](#simple-code-modification-example-for-matrix-voice).
 
-##### Compile and Flash MATRIX Creator FPGA code
+#### Compile and Flash MATRIX Creator FPGA code
 
 To compile the modified FPGA code, open your terminal, navigate to the matrix-creator-fpga > creator-core directory and run the command below. Be sure to have the Xilinx ISE running in the background.
 ```bash
@@ -230,9 +230,9 @@ To flash the system.bit file onto your FPGA, follow the instructions in the docu
 
 See [General Comments](#general-comments) below for tips and tricks.
 
-#### MATRIX Voice
+### MATRIX Voice
 
-##### Clone MATRIX Voice FPGA code repo
+#### Clone MATRIX Voice FPGA code repo
 
 To modify MATRIX Voice FPGA code, type the following commands in your computer's terminal.
 ```bash
@@ -246,7 +246,7 @@ sudo apt-get install git
 ```
 You can then navigate to matrix-voice-fpga > voice-core and edit the Verilog files as desired. A simple example with MATRIX Voice is shown [below](#simple-code-modification-example-for-matrix-voice).
 
-##### Compile and Flash MATRIX Voice FPGA code
+#### Compile and Flash MATRIX Voice FPGA code
 
 To compile the modified FPGA code, open your terminal, navigate to the matrix-voice-fpga > voice-core directory and run the command below. Be sure to have the Xilinx ISE running in the background.
 ```bash
@@ -260,7 +260,7 @@ To flash the system.bit file onto your FPGA, follow the instructions in the docu
 
 See [General Comments](#general-comments) below for tips and tricks.
 
-#### General Comments
+## General Comments
 You can use a text editor of your choice to edit the Verilog files. I prefer to use [Visual Studio Code](https://code.visualstudio.com/) in which you can install extensions to color code your files.
 
 To upload the system.bit file onto your Raspberry Pi:
@@ -270,7 +270,7 @@ To upload the system.bit file onto your Raspberry Pi:
 
 > Remember that you will have to upload the system.bit file to the /home/pi directory and then move it to the appropriate location to be flashed via the terminal using the sudo command.
 
-### Simple Code Modification Example for MATRIX Voice
+## Simple Code Modification Example for MATRIX Voice
 
 The following goes through a simple modification of the MATRIX Voice FPGA code to connect a Raspberry Pi GPIO straight to a MATRIX Voice GPIO through the FPGA.
 
