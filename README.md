@@ -29,9 +29,7 @@ Keep in mind you will need 22GB free space in root for this application.
 cd Xilinx_ISE_DS_Lin_14.7_1015_1
 sudo ./xsetup
 ```
-The ISE 14.7 installer UI will open up. Follow the steps in the video below to install ISE with the correct settings.
-
-********INSERT VIDEO********
+The ISE 14.7 installer UI will open up. Follow the steps in the [video](https://youtu.be/meO-b6Ib17Y?t=56) up to time 1:34 to install ISE with the correct settings.
 
 In your terminal type the following to open the ~/.bashrc file.
 ```bash
@@ -66,8 +64,6 @@ Once the license is generated, you will automatically be routed to the "Manage L
 ![](/images/download_license.png)
 
 Go to your ISE Project Navigator, go to Help > Manage License > Load License and select the appropriate license file.
-
-********INSERT VIDEO********
 
 Congratulations, you have set up your Xilinx FPGA compiler on Linux!
 
@@ -184,8 +180,6 @@ Once the license is generated, you will automatically be routed to the "Manage L
 ![](/images/download_license.png)
 
 Go to your ISE Project Navigator, go to Help > Manage License > Load License and select the appropriate license file.
-
-********INSERT VIDEO********
 
 Congratulations, you have set up your Xilinx FPGA compiler on Linux!
 
