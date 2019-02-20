@@ -5,6 +5,15 @@ How to set up the Xilinx compiler for FPGA code, and get started with FPGA progr
 
 > Please note that the open-source FPGA code for MATRIX devices have the mic digital signal processing (DSP) algorithms omitted. So, reflashing the FPGA with modified code will remove mic functionality. Directions on how to restore the original FPGA configurations with mics is available on our [documentaion](https://matrix-io.github.io/matrix-documentation/).
 
+## Table of Contents
+1. Install Xilinx ISE for [Linux](#for-linux)
+2. Install Xilinx ISE for [Windows](#for-windows)
+3. Install Xilinx ISE for [Mac](#for-mac)
+4. Modify, Compile & Upload Verilog Files for the [MATRIX Creator](#matrix-creator)
+5. Modify, Compile & Upload Verilog Files for the [MATRIX Voice](#matrix-voice)
+6. [General Comments with Tips and Tricks](#general-comments)
+7. [Simple Example with MATRIX Voice](#simple-code-modification-example-for-matrix-voice)
+
 ### For Linux
 
 Click [here](https://www.xilinx.com/registration/sign-in.html?oamProtectedResource=wh%3Dwww.xilinx.com%20wu%3D%2Fmember%2Fforms%2Fdownload%2Fxef.html%3Ffilename%3DXilinx_ISE_DS_Lin_14.7_1015_1.tar%20wo%3D1%20rh%3Dhttps%3A%2F%2Fwww.xilinx.com%20ru%3D%252Fmember%252Fforms%252Fdownload%252Fxef.html%20rq%3Dfilename%253DXilinx_ISE_DS_Lin_14.7_1015_1.tar) to go to the Xilinx website and download the full ISE WebPack installer for Linux.
@@ -219,6 +228,8 @@ This should create a system.bit file.
 
 To flash the system.bit file onto your FPGA, follow the instructions in the documentation [here](https://matrix-io.github.io/matrix-documentation/matrix-creator/resources/fpga/).
 
+See [General Comments](#general-comments) below for tips and tricks.
+
 #### MATRIX Voice
 
 ##### Clone MATRIX Voice FPGA code repo
@@ -247,13 +258,13 @@ This should create a system.bit file.
 
 To flash the system.bit file onto your FPGA, follow the instructions in the documentation [here](https://matrix-io.github.io/matrix-documentation/matrix-voice/resources/fpga/).
 
-See [General Comments](#general-comments) below.
+See [General Comments](#general-comments) below for tips and tricks.
 
 #### General Comments
 You can use a text editor of your choice to edit the Verilog files. I prefer to use [Visual Studio Code](https://code.visualstudio.com/) in which you can install extensions to color code your files.
 
-To upload the system.bit file:
-1) You can use [Cyberduck](https://cyberduck.io/) (available on Windows and Mac) to SFTP into your Raspberry Pi, and upload the system.bit file.
+To upload the system.bit file onto your Raspberry Pi:
+1) For Mac and Windows, you can use [Cyberduck](https://cyberduck.io/) to SFTP into your Raspberry Pi, and upload the system.bit file.
 
 2) For Linux, you can mount your Raspberry Pi as a network drive using SFTP.
 
