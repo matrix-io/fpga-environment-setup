@@ -189,6 +189,8 @@ Congratulations, you have set up your Xilinx FPGA compiler on Linux!
 
 #### MATRIX Creator
 
+##### Clone MATRIX Creator FPGA code repo
+
 To modify the MATRIX Creator FPGA code, type the following commands in your computer's terminal (For Windows use Windows Power Shell, Git Bash or Putty, and make sure to clone the repo into the shared file path with the Xilinx ISE VM).
 ```bash
 git clone https://github.com/matrix-io/matrix-creator-fpga.git
@@ -200,6 +202,8 @@ sudo apt-get upgrade
 sudo apt-get install git
 ```
 You can then navigate to matrix-creator-fpga > creator-core and edit the Verilog files as desired.
+
+##### Compile and Flash MATRIX Creator FPGA code
 
 To compile the modified FPGA code, open your terminal, navigate to the matrix-creator-fpga > creator-core directory and run the command
 ```bash
@@ -213,6 +217,8 @@ To flash the system.bit file onto your FPGA, follow the instructions in the docu
 
 #### MATRIX Voice
 
+##### Clone MATRIX Voice FPGA code repo
+
 To modify MATRIX Voice FPGA code, type the following commands in your computer's terminal.
 ```bash
 git clone https://github.com/matrix-io/matrix-voice-fpga.git
@@ -224,6 +230,8 @@ sudo apt-get upgrade
 sudo apt-get install git 
 ```
 You can then navigate to matrix-voice-fpga > voice-core and edit the Verilog files as desired.
+
+##### Compile and Flash MATRIX Voice FPGA code
 
 To compile the modified FPGA code, open your terminal, navigate to the matrix-voice-fpga > voice-core directory and run the command
 ```bash
@@ -246,3 +254,53 @@ To upload the system.bit file:
 2) For Linux, you can mount your Raspberry Pi as a network drive using SFTP.
 
 > Remember that you will have to upload the system.bit file to the /home/pi directory and then move it to the appropriate location to be flashed via the terminal using the sudo command.
+
+### Simple Code Modification Example
+
+The following goes through a simple modification of the MATRIX Voice FPGA code to connect a Raspberry Pi GPIO straight to a MATRIX Voice GPIO through the FPGA.
+
+Currently, the MATRIX Voice has its own framework for the GPIO coded into the FPGA.
+
+First, we need to understand the MATRIX Voice GPIO pinout and how it is connected to the Raspberry Pi's GPIOs.
+
+The following graphics are taken from the [MATRIX documentation](https://matrix-io.github.io/matrix-documentation/matrix-voice/resources/pinout/).
+
+The MATRIX Voice's expansion GPIO pins.
+
+![](/images/MATRIX_Voice_GPIO_pic.png)
+![](/images/MATRIX_Voice_pinout.png)
+
+As you can see in this picture, pins DF0 to DF15 are connected to the FPGA. So, we will pick one of these pins to change FPGA code for. I pick DF15 in this example. It is important to remember that it is connected to FPGA pin R2.
+
+Now to see the MATRIX Voice to Raspberry Pi GPIO connections.
+
+![](/images/MATRIX_Voice_RPi_connect_pic.png)
+![](/images/MATRIX_Voice_to_RPi.png)
+
+Since we want to expose a Raspberry Pi GPIO, we will have to pick an RPi pin that is connected to the FPGA. In this example, I pick GPIO 16 which is connected to FPGA pin P8.
+
+Now to the Verilog files!
+
+After cloning the Github MATRIX Voice repo following the steps [above](#Clone-MATRIX-Voice-FPGA-code-repo), navigate into the voice_core folder. In the *voice.ucf* file Ctrl+F to find FPGA pin **R2**.
+
+You should see that it is connected to GPIO 15. Change the line to the one shown below so that you can write your own code for it and not have it be programmed with the rest of the MATRIX Voice GPIOs. You should comment the changes you make to keep track!
+```bash
+NET "gpio_io_15" LOC="R2" | IOSTANDARD = LVCMOS33; # CHANGED
+```
+Next, Ctrl+F to find FPGA pin **P8**. This is connected to RPi GPIO 16. Uncomment the code if it is commented, and rename the pin **GPIO_16_RPi** from **GPIO_16** for ease of remembering where the pin comes from.
+
+Now, go to the *system.v* file. You will find a parameter **GPIO_WIDTH** which will be equal to **16**. For this example, we will only have **15** GPIOs being configured using the FPGA GPIO code as we will be exposing the RPi GPIO for one. So, we will have to change all instances of **GPIO_WIDTH** in the Verilog files to **15**.
+
+This occurs in 2 files: *mux_io.v* and *system.v*. Ctrl+F to find **GPIO_WIDTH** and change it to the value **15**.
+
+Finally, in the *system.v* file, add the following two lines at the end of the section where all the inputs and outputs are being defined. These are defining both the RPi GPIO and the MATRIX Voice GPIO as bi-directional buses.
+```bash
+  inout GPIO_16_RPi                       , // ADDED
+  inout gpio_io_15                    // ADDED
+```
+In *system.v*, in the section where pins are being assigned, paste the following code. This line is what basically connects "a wire" between RPi GPIO 16 and MATRIX Voice GPIO 15.
+```bash
+  // ADDED
+  assign gpio_io_15 =  GPIO_16_RPi;
+```
+Then compile and flash the MATRIX Voice FPGA Verilog code following the steps [above](#Compile-and-Flash-MATRIX-Voice-FPGA-code).
