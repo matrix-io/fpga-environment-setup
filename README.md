@@ -171,7 +171,7 @@ Next, update your ISE license.
 
 To install the license file, go back to the Xilinx website using [this](https://www.xilinx.com/member/forms/license-form.html) link. 
 
-Once again, you will be prompted to log in. Once you do, it will take you to the page to fill out additional information which should be pre-filled. (**Verify this works on Mozilla**) Click Next.
+Once again, you will be prompted to log in. Once you do, it will take you to the page to fill out additional information which should be pre-filled. Click Next. *If the log-in page freezes, switch your browser.*
 
 Select *ISE WebPACK* check box (you will see it says "No Charge") and click on "Generate Node-locked License".
 
@@ -201,7 +201,7 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install git
 ```
-You can then navigate to matrix-creator-fpga > creator-core and edit the Verilog files as desired.
+You can then navigate to matrix-creator-fpga > creator-core and edit the Verilog files as desired. A simple example with MATRIX Voice is shown [below](#simple-code-modification-example-for-matrix-voice).
 
 ##### Compile and Flash MATRIX Creator FPGA code
 
@@ -229,7 +229,7 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install git 
 ```
-You can then navigate to matrix-voice-fpga > voice-core and edit the Verilog files as desired.
+You can then navigate to matrix-voice-fpga > voice-core and edit the Verilog files as desired. A simple example with MATRIX Voice is shown [below](#simple-code-modification-example-for-matrix-voice).
 
 ##### Compile and Flash MATRIX Voice FPGA code
 
@@ -255,7 +255,7 @@ To upload the system.bit file:
 
 > Remember that you will have to upload the system.bit file to the /home/pi directory and then move it to the appropriate location to be flashed via the terminal using the sudo command.
 
-### Simple Code Modification Example
+### Simple Code Modification Example for MATRIX Voice
 
 The following goes through a simple modification of the MATRIX Voice FPGA code to connect a Raspberry Pi GPIO straight to a MATRIX Voice GPIO through the FPGA.
 
