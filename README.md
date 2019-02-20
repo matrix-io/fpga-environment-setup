@@ -295,7 +295,7 @@ Next, Ctrl+F to find FPGA pin **P8**. This is connected to RPi GPIO 16. Uncommen
 
 Now, go to the *system.v* file. You will find a parameter **GPIO_WIDTH** which will be equal to **16**. For this example, we will only have **15** GPIOs being configured using the FPGA GPIO code as we will be exposing the RPi GPIO for one. So, we will have to change all instances of **GPIO_WIDTH** in the Verilog files to **15**.
 
-This occurs in 2 files: *mux_io.v* and *system.v*. Ctrl+F to find **GPIO_WIDTH** and change it to the value **15**.
+This occurs in 2 files: voice_core > rtl > wb_gpio > *mux_io.v* and *system.v*. Ctrl+F to find **GPIO_WIDTH** and change it to the value **15**.
 
 Finally, in the *system.v* file, add the following two lines at the end of the section where all the inputs and outputs are being defined. These are defining both the RPi GPIO and the MATRIX Voice GPIO as bi-directional buses.
 ```bash
