@@ -44,25 +44,9 @@ sudo ./xsetup
 ```
 The ISE 14.7 installer UI will open up. Follow the steps in the [video](https://youtu.be/meO-b6Ib17Y?t=56) up to time 1:34 to install ISE with the correct settings.
 
-In your terminal type the following to open the ~/.bashrc file.
+Run the following command in your terminal to run the application.
 ```bash
-sudo nano ~/.bashrc
-```
-Scroll to the end of the file and add the following line.
-```bash
-source /opt/Xilinx/14.7/ISE_DS/settings64.sh 
-```
-Press Ctrl+X, then Y to save and exit the nano editor.
-
-Close your terminal and open a new one.
-
-When you reopen your terminal, it will look something like this.
-
-![](/images/after_settings64_sourcing.png)
-
-Run the command ise in your terminal to run the application.
-```bash
-ise
+source /opt/Xilinx/14.7/ISE_DS/settings64.sh;ise
 ```
 An error will pop saying "a license was not found". 
 
@@ -219,10 +203,22 @@ You can then navigate to matrix-creator-fpga > creator-core and edit the Verilog
 #### Compile and Flash MATRIX Creator FPGA code
 
 To compile the modified FPGA code, open your terminal, navigate to the matrix-creator-fpga > creator-core directory and run the command below. Be sure to have the Xilinx ISE running in the background.
+
+For **Windows and Mac**:
 ```bash
 make clean
 make
 ```
+For **Linux**, you will have to source the settings64.sh file every time you compile by pasting the following command into your terminal. Alternatively, you can put this line in your ~/.bashrc file so it will run every time you start a terminal session, but this could mess with some programs when you try to run them.
+```bash
+source /opt/Xilinx/14.7/ISE_DS/settings64.sh
+```
+Then, in the same terminal run
+```bash
+make clean
+make
+```
+
 This should create a system.bit file. 
 
 > Be advised that this file will not have mic DSP since that IP has not been made public yet.
@@ -250,10 +246,22 @@ You can then navigate to matrix-voice-fpga > voice-core and edit the Verilog fil
 #### Compile and Flash MATRIX Voice FPGA code
 
 To compile the modified FPGA code, open your terminal, navigate to the matrix-voice-fpga > voice-core directory and run the command below. Be sure to have the Xilinx ISE running in the background.
+
+For **Windows and Mac**:
 ```bash
 make clean
 make
 ```
+For **Linux**, you will have to source the settings64.sh file every time you compile by pasting the following command into your terminal. Alternatively, you can put this line in your ~/.bashrc file so it will run every time you start a terminal session, but this could mess with some programs when you try to run them.
+```bash
+source /opt/Xilinx/14.7/ISE_DS/settings64.sh
+```
+Then, in the same terminal run
+```bash
+make clean
+make
+```
+
 This should create a system.bit file. 
 
 > Be advised that this file will not have mic DSP since that IP has not been made public yet.
