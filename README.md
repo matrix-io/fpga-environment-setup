@@ -220,6 +220,7 @@ You can then navigate to matrix-creator-fpga > creator-core and edit the Verilog
 
 To compile the modified FPGA code, open your terminal, navigate to the matrix-creator-fpga > creator-core directory and run the command below. Be sure to have the Xilinx ISE running in the background.
 ```bash
+make clean
 make
 ```
 This should create a system.bit file. 
@@ -250,6 +251,7 @@ You can then navigate to matrix-voice-fpga > voice-core and edit the Verilog fil
 
 To compile the modified FPGA code, open your terminal, navigate to the matrix-voice-fpga > voice-core directory and run the command below. Be sure to have the Xilinx ISE running in the background.
 ```bash
+make clean
 make
 ```
 This should create a system.bit file. 
